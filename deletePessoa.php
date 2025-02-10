@@ -10,7 +10,7 @@ include_once("pessoaController");
     <title>Remover</title>
 </head>
 <body>
-    <h1>Delet</h1>
+    <h1>Remover</h1>
     
 </body>
 </html>

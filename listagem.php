@@ -11,8 +11,8 @@
 <body>
     
     <?php
-    include_once("db.php");
-    include_once("pessoa_da.php");
+    include_once("bd.php");
+    include_once("pessoaDAO.php");
 
     $listaPessoa = getUsuarios();
     
@@ -27,7 +27,7 @@
         for($i=0; $i <count($listaPessoa); $i++){
             ?>
             <tr>
-                <td><?php echo $listaPessoa[$i]["idusuario"] ?></td>
+                <td><?php echo $listaPessoa[$i]["id"] ?></td>
                 <td><?php echo $listaPessoa[$i]["nome"] ?></td>
                 <td><?php echo $listaPessoa[$i]["senha"] ?></td>
             </tr>

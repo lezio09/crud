@@ -1,10 +1,10 @@
 <?php 
-    include_once("db.php");
+    include_once("bd.php");
     
-    function save($nome,$email){
+    function save($nome,$senha){
         $db = conecta();
 
-        $sql = "insert into usuario (nome,email) values (?,?)";
+        $sql = "insert into usuario (nome,senha) values (?,?)";
 
         $stmt = $db ->prepare($sql);
         $stmt->bindValue(1,$nome);
@@ -14,7 +14,7 @@
     function getAllUser( $str =""){
         $db = conecta();
         $sql = "SELECT * FROM usuarios WHERE nome LIKE '%$str%'";
-        $stmt = $conn->prepare($sql);
+        $stmt = $db->prepare($sql);
         $stmt->execute();
         $usuarios = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $usuarios;
@@ -37,13 +37,12 @@
         $stmt->execute();
         return $stmt->rowCount();
     }
-    function updateUser($id, $nome, $email, $senha){
+    function updateUser($id, $nome, $senha){
         $conn = conectar();
         $sql = "UPDATE usuarios SET nome = :nome, email = :email, senha = :senha WHERE id = :id";
-        $stmt = $conn->prepare($sql);
+        $stmt = $db->prepare($sql);
         $stmt->bindParam(':id', $id);
         $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':email', $email);
         $stmt->bindParam(':senha', $senha);
         
         $stmt->execute();

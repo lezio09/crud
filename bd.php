@@ -2,10 +2,10 @@
     function conecta(){
         $user="root";
         $senha="";
-        $database="crud";
+        $db="crud";
         $host="localhost";
         
-        $db = new PDO("mysql:host=$host;dbname=$database",$user,$senha);
+        $db = new PDO("mysql:host=$host;dbname=$db",$user, $nome, $senha);
         if($db){
             return $db;
         }else{
@@ -13,8 +13,8 @@
         }
     }
 
-    function chekConexao($connId){
-        if($connId){
+    function chekConexao($dbId){
+        if($dbId){
             echo "Sucesso ao conectar!";
         }else{
             echo "Ops! Erro ao tentar se conectar.";
