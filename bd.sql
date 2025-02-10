@@ -9,7 +9,7 @@ CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(80) NOT NULL,
   `senha` varchar(60) NOT NULL,
-  PRIMARY KEY (`idusuario`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
