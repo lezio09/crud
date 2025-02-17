@@ -1,15 +1,13 @@
 <?php
-include_once("bd.php");
-include_once("pessoaController.php");
-
-$method = $_SERVER['REQUEST_METHOD'];
-if ($method == "GET") {
-    $id = $_GET['id'] ?? null;
-    if ($id && deleteUser($id)) {
-        header("Location: listagem.php");
-        exit();
+include 'db_connect.php';
+if (isset($_POST['remover'])) {
+    $id = $_POST['id'];
+    $stmt = $conn->prepare("DELETE FROM users WHERE id=?");
+    $stmt->bind_param("i", $id);
+    if ($stmt->execute()) {
+        echo "Usuário removido!";
     } else {
-        echo "Erro ao deletar o usuário";
+        echo "Erro ao remover.";
     }
 }
 ?>

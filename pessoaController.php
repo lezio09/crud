@@ -1,5 +1,5 @@
 <?php
-    include_once("bd.php");
+    include_once("db.php");
     include_once("pessoaDAO.php");
 
     if(isset($_POST["acao"]) && $_POST["acao"] == "entrar"){
