@@ -8,7 +8,7 @@ include 'db_connect.php';
 </head>
 <body>
     <h2>Cadastro de Usuário</h2>
-    <form action="register.php" method="POST">
+    <form action="cadastroPessoa.php" method="POST">
         Nome: <input type="text" name="nome" required><br>
         Usuário: <input type="text" name="usuario" required><br>
         Senha: <input type="password" name="senha" required><br>
@@ -24,6 +24,6 @@ include 'db_connect.php';
     </form>
 
     <h2>Lista de Usuários</h2>
-    <?php include 'list_users.php'; ?>
+    <?php include 'listagem.php'; ?>
 </body>
 </html>
